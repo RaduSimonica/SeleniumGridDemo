@@ -39,11 +39,12 @@ public class BaseClass {
     private ChromeOptions setOptions() {
         ChromeOptions chromeOptions = new ChromeOptions();
 
-//        chromeOptions.addArguments("enable-automation");
-//        chromeOptions.addArguments("--headless");
-//        chromeOptions.addArguments("--no-sandbox");
-//        chromeOptions.addArguments("--disable-extensions");
-//        chromeOptions.addArguments("--dns-prefetch-disable");
+        chromeOptions.addArguments("enable-automation");
+        chromeOptions.addArguments("--headless");
+        chromeOptions.addArguments("--window-size=1920,1080");
+        chromeOptions.addArguments("--no-sandbox");
+        chromeOptions.addArguments("--disable-extensions");
+        chromeOptions.addArguments("--dns-prefetch-disable");
         chromeOptions.addArguments("--disable-gpu");
         chromeOptions.setPageLoadStrategy(PageLoadStrategy.NORMAL);
 
