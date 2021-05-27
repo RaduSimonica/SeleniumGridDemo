@@ -5,9 +5,13 @@ import org.openqa.selenium.PageLoadStrategy;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.remote.RemoteWebDriver;
+import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
 public class BaseClass {
@@ -25,11 +29,19 @@ public class BaseClass {
 
     @AfterMethod(alwaysRun = true)
     public void teardown() {
-        this.driver.close();
+        this.driver.quit();
     }
 
     private void setupChromeDriver() {
-        this.driver = new ChromeDriver(setOptions());
+        URL hubUrl = null;
+
+        try {
+            hubUrl = new URL("http://0.0.0.0:4444/wd/hub");
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        }
+
+        this.driver = new RemoteWebDriver(hubUrl, setOptions());
 
         this.driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         this.driver.manage().timeouts().pageLoadTimeout(40, TimeUnit.SECONDS);
