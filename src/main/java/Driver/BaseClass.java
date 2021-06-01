@@ -17,9 +17,7 @@ public class BaseClass {
 
     @BeforeMethod(alwaysRun = true)
     public void setup() {
-        System.setProperty("webdriver.chrome.driver", "src/main/resources/Driver/chromedriver");
         setupChromeDriver();
-
         this.driverUtils = new DriverUtils(this.driver);
     }
 
@@ -29,18 +27,18 @@ public class BaseClass {
     }
 
     private void setupChromeDriver() {
+        System.setProperty("webdriver.chrome.driver", "src/main/resources/Driver/chromedriver");
+
         this.driver = new ChromeDriver(setOptions());
 
         this.driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         this.driver.manage().timeouts().pageLoadTimeout(40, TimeUnit.SECONDS);
-        this.driver.manage().window().maximize();
     }
 
     private ChromeOptions setOptions() {
         ChromeOptions chromeOptions = new ChromeOptions();
 
         chromeOptions.addArguments("enable-automation");
-        chromeOptions.addArguments("--headless");
         chromeOptions.addArguments("--window-size=1920,1080");
         chromeOptions.addArguments("--no-sandbox");
         chromeOptions.addArguments("--disable-extensions");
