@@ -3,10 +3,8 @@ package Driver;
 import Utilities.DriverUtils;
 import org.openqa.selenium.PageLoadStrategy;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.RemoteWebDriver;
-import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
@@ -21,7 +19,6 @@ public class BaseClass {
 
     @BeforeMethod(alwaysRun = true)
     public void setup() {
-        System.setProperty("webdriver.chrome.driver", "src/main/resources/Driver/chromedriver");
         setupChromeDriver();
 
         this.driverUtils = new DriverUtils(this.driver);
@@ -33,6 +30,8 @@ public class BaseClass {
     }
 
     private void setupChromeDriver() {
+        System.setProperty("webdriver.chrome.driver", "src/main/resources/Driver/chromedriver");
+
         URL hubUrl = null;
 
         try {

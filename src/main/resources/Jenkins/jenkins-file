@@ -1,5 +1,22 @@
 package Jenkins
 
 pipeline {
-
+    agent any
+    stages {
+        stage("Cleanup") {
+            steps {
+                cleanWs()
+            }
+        }
+        stage("Git Checkout") {
+            steps {
+                git branch: 'Grid', url: 'https://github.com/RaduSimonica/SeleniumGridDemo.git'
+            }
+        }
+        stage("Run tests!") {
+            steps {
+                sh "mvn clean test"
+            }
+        }
+    }
 }
