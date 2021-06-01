@@ -36,7 +36,7 @@ public class BaseClass {
         URL hubUrl = null;
 
         try {
-            hubUrl = new URL("http://0.0.0.0:4444/wd/hub");
+            hubUrl = new URL("http://192.168.0.139:4444/wd/hub");
         } catch (MalformedURLException e) {
             e.printStackTrace();
         }
