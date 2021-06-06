@@ -1,6 +1,6 @@
-package Driver;
+package driver;
 
-import Utilities.DriverUtils;
+import utilities.DriverUtils;
 import org.openqa.selenium.PageLoadStrategy;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;

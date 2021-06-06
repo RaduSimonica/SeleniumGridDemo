@@ -1,14 +1,14 @@
-package Pages;
+package pages;
 
-import Utilities.DriverUtils;
+import utilities.DriverUtils;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 
-public class WhatWeDoPage {
+public class WhoWeArePage {
 
     private DriverUtils driverUtils;
 
-    public WhatWeDoPage(WebDriver driver) {
+    public WhoWeArePage(WebDriver driver) {
         this.driverUtils = new DriverUtils(driver);
 
         PageFactory.initElements(driver, this);

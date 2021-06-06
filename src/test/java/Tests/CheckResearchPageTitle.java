@@ -1,9 +1,9 @@
 package Tests;
 
-import Driver.BaseClass;
-import Enums.PageTitle;
-import Pages.HomePage;
-import Pages.ResearchPage;
+import driver.BaseClass;
+import enums.PageTitle;
+import pages.HomePage;
+import pages.ResearchPage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
