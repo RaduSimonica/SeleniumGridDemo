@@ -1,6 +1,6 @@
-package Utilities;
+package utilities;
 
-import Enums.PageTitle;
+import enums.PageTitle;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -21,14 +21,6 @@ public class DriverUtils {
 
     public String getPageTitle() {
         return driver.getTitle();
-    }
-
-    public void waitForElement(WebElement element) {
-        wait.until(ExpectedConditions.visibilityOf(element));
-    }
-
-    public void waitForPageTitle(PageTitle title) {
-        wait.until(ExpectedConditions.titleIs(title.get()));
     }
 
     public void moveToElementAndClick(WebElement element) {

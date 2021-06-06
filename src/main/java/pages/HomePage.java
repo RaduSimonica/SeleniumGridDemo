@@ -1,8 +1,8 @@
-package Pages;
+package pages;
 
-import Enums.PageTitle;
-import Enums.Url;
-import Utilities.DriverUtils;
+import enums.PageTitle;
+import enums.Url;
+import utilities.DriverUtils;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -70,10 +70,6 @@ public class HomePage {
 
     public void clickResearchButton() {
         this.research.click();
-    }
-
-    public void clickPositiveImpactButton() {
-        this.positiveImpact.click();
     }
 
     public void clickResponsibilityButton() {

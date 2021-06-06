@@ -1,14 +1,14 @@
-package Pages;
+package pages;
 
-import Utilities.DriverUtils;
+import utilities.DriverUtils;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 
-public class CareersPage {
+public class MediaPage {
 
     private DriverUtils driverUtils;
 
-    public CareersPage(WebDriver driver) {
+    public MediaPage(WebDriver driver) {
         this.driverUtils = new DriverUtils(driver);
 
         PageFactory.initElements(driver, this);

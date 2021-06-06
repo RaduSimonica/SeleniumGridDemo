@@ -1,14 +1,14 @@
-package Pages;
+package pages;
 
-import Utilities.DriverUtils;
+import utilities.DriverUtils;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 
-public class PositiveImpactPage {
+public class CareersPage {
 
     private DriverUtils driverUtils;
 
-    public PositiveImpactPage(WebDriver driver) {
+    public CareersPage(WebDriver driver) {
         this.driverUtils = new DriverUtils(driver);
 
         PageFactory.initElements(driver, this);
